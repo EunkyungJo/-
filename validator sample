@@ -1,0 +1,6 @@
+import re
+
+def phone_number_validator(value):
+    PATTERN = r'^01[016789]\d{7, 8}$'
+    if re.match(PATTERN, value) is None:
+        print('유효성 검사 실패')

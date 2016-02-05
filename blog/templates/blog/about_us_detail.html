@@ -1,0 +1,30 @@
+{% extends 'blog/index.html' %}
+
+{% block header_color %}
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Home</a>
+      <a class="navbar-brand" href="/bio">Profile</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="jumbotron">
+    <h2>{{ we.name }}</h2>
+    <p>{{ we.age }}</p>
+    <p>{{ we.location }}</p>
+    <p>{{ we.intro }}</p>
+
+</div>
+</div>
+
+<hr/>
+
+<a href="/about_us/" align="right">글목록 </a>
+
+{% endblock %}

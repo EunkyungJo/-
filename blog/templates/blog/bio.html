@@ -1,0 +1,42 @@
+{% extends 'blog/index.html' %}
+
+{% block header_color %}
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Home</a>
+            <a class="navbar-brand" href="/bio" style="color:skyblue">Profile</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+      <table>
+        <td>
+          <img src="http://cfile22.uf.tistory.com/image/2148F43D5367352503BD6C" style="width: 70%; height:70%"/>
+        </td>
+        <td>
+            <h2>류명한</h2>
+          <ul>
+            <li style="fond-family:하늘고딕;font-size:15px">
+            Seoul National University
+            </li>
+            <li style="font-family:Times New Roman;font-size:20px">
+              <em>Major</em>: <strong>Philosophy & Computer Science and Engineering</strong></li>
+            <li style="font-family:Times New Roman;font-size:20px">
+              <em>Birth</em>: <strong>1989. 03. 13</strong></li>
+            <li style="font-family:Times New Roman;font-size:20px">
+              <em>Job</em>: <strong>University Student</strong></li>
+            <li style="font-family:Times New Roman;font-size:20px">
+              <em>Interested in</em> <strong>Fitness, Programming, Reading books</strong></li>
+           <!-- <li style="font-family:Times New Roman;font-size:20px">
+              <em>Available Language</em>: <strong>C, C++, Java, Python - django</strong></li> !-->
+          </ul>
+        </td>
+        </table>
+    </div>
+</div>
+{% endblock %}

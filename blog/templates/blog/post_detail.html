@@ -1,0 +1,45 @@
+{% extends "blog/index.html" %}
+
+{% block header_color %}
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Home</a>
+            <a class="navbar-brand" href="/bio">Profile</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="jumbotron">
+    <h2>{{ post.title }}</h2>
+    {% if post.photo %}
+        <img style="width:544px; height: 306px" src="{{ post.photo.url }}"/>
+    {% endif %}
+    <p>{{ post.content|linebreaks }}</p>
+    <p>Phone: {{ post.phone }}
+    <a href="{% url "blog,comment_new" post.pk %}" class ="btn btn-primary btn-block">
+    새 댓글 쓰기
+    </a>
+
+    <ul>
+    {% for comment in post.comment_set.all %}
+        <li>
+            {{ comment.message }}
+            <a href="{% url "blog,comment_edit" post.pk comment.pk %}">수정</a>
+        </li>
+    {% empty %}
+        <li> 등록된 댓글이 없습니다. </li>
+    {% endfor %}
+    </ul>
+    <a href="/posts/{{post.id}}/edit/">글 수정</a>
+</div>
+</div>
+
+<hr/>
+
+<a href="/posts/">글목록 </a>
+{% endblock %}

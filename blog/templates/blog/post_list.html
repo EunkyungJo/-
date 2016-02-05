@@ -1,0 +1,33 @@
+{% extends 'blog/index.html' %}
+
+{% block header_color %}
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Home</a>
+            <a class="navbar-brand" href="/bio">Profile</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+  <div class="jumbotron">
+     <ul>
+
+     {% for post in post_list %}
+     <li>
+     {{ post.id }}
+      <a href="/posts/{{ post.id }}/">
+        {{ post.title }}
+      </a>
+     </li>
+     {% endfor %}
+
+     </ul>
+</div>
+</div>
+{% endblock %}
+

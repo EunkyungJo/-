@@ -1,0 +1,32 @@
+{% extends 'blog/index.html' %}
+{% block header_color %}
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Home</a>
+      <a class="navbar-brand" href="/bio">Profile</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="jumbotron">
+     <ul>
+
+     {% for member in members %}
+     <!-- member_list: from views -->
+     <li>
+     {{ member.id }}
+      <a href="/members/{{ member.id }}/">
+        {{ member.name }}
+      </a>
+     </li>
+     {% endfor %}
+
+     </ul>
+</div>
+</div>
+{% endblock %}
+
